@@ -8,7 +8,7 @@
     "dev": "webpack --mode development",
     "start": "webpack serve --mode development",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack --mode production"
+    "build": "webpack --mode production --config webpack.build.config.js"
   },
   "author": "A.Gurin",
   "license": "ISC",
