@@ -14,6 +14,7 @@ const HTML_TEMPLATE = "index.html";
 const pluginConfig = {
   confHtmlWebpackPlugin: {
     template: path.resolve(__dirname, SRC, HTML_TEMPLATE),
+    filename: "index.[contenthash].html",
   },
   confMiniCssExtractPlugin: {
     filename: "./styles/[name].css",
@@ -26,7 +27,6 @@ const config = {
   entry: {
     index: path.resolve(__dirname, "src", "index.js"),
   },
-  devtool: false,
   output: {
     path: path.resolve(__dirname, BUILD),
     filename: "[name].[contenthash].js",
