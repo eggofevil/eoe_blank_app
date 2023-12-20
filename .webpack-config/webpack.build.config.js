@@ -5,8 +5,8 @@ import MiniCssExtractPlugin from "mini-css-extract-plugin";
 import CssMinimizerPlugin from "css-minimizer-webpack-plugin";
 
 const ROOT = path.resolve(getGlobals(import.meta.url).__dirname, "..");
-const SRC = "src";
-const BUILD = "build";
+const SRC = "__src";
+const BUILD = "__build";
 
 const pluginConfig = {
   confHtmlWebpackPlugin: {

@@ -4,8 +4,8 @@ import HtmlWebpackPlugin from "html-webpack-plugin";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
 
 const ROOT = path.resolve(getGlobals(import.meta.url).__dirname, "..");
-const PREVIEW = "preview";
-const SRC = "src";
+const PREVIEW = "__preview";
+const SRC = "__src";
 
 const pluginConfig = {
   confHtmlWebpackPlugin: {
