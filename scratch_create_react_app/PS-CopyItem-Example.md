@@ -1,0 +1,1 @@
+Copy-Item -Path "C:\code\projects\react-js\scratch_create_react_app\*" -Destination "C:\code\projects\test-gh-pages-post"-Exclude ("node_modules", "PS-CopyItem-Example.txt", "package-lock.json") -Recurse

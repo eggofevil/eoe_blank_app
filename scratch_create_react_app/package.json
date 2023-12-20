@@ -1,0 +1,41 @@
+{
+  "___COMMENT1___": "@babel/plugin-proposal-private-property-in-object перечислен в devDependencies",
+  "___COMMENT2___": "для устранения соответствующего предупреждения при сборке проекта",
+  "dependencies": {
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "react-scripts": "^5.0.0"
+  },
+  "main": "/index.js",
+  "name": "scratch_create_react_app",
+  "description": "Scratch for creating react app with 'Create React App' https://create-react-app.dev/, based on example form https://react.dev/learn/tutorial-tic-tac-toe. Change this and above for new project",
+  "version": "0.0.1",
+  "scripts": {
+    "predeployBld": "npm run build",
+    "deploySrc": "node ./gh-pages.js src",
+    "deployBld": "node ./gh-pages.js bld",
+    "deployAll": "npm run deploySrc && npm run deployBld",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "author": "A.Gurin",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "gh-pages": "^6.1.0"
+  }
+}
