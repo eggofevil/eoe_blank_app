@@ -2,17 +2,14 @@ import path from "path";
 import { getGlobals } from "common-es";
 import HtmlWebpackPlugin from "html-webpack-plugin";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
-import CssMinimizerPlugin from "css-minimizer-webpack-plugin";
 
-const { __dirname } = getGlobals(import.meta.url);
-const BUILD = "build";
+const ROOT = path.resolve(getGlobals(import.meta.url).__dirname, "..");
+const PREVIEW = "preview";
 const SRC = "src";
-const HTML_TEMPLATE = "index.html";
 
 const pluginConfig = {
   confHtmlWebpackPlugin: {
-    template: path.resolve(__dirname, SRC, HTML_TEMPLATE),
-    filename: "index.html",
+    template: path.resolve(ROOT, SRC, "index.html"),
   },
   confMiniCssExtractPlugin: {
     filename: "./styles/[name].[contenthash].css",
@@ -20,19 +17,17 @@ const pluginConfig = {
 };
 
 const config = {
-  mode: "production",
-  devtool: false,
+  mode: "development",
+  devtool: "inline-source-map",
   entry: {
-    index: path.resolve(__dirname, "src", "index.js"),
+    index: path.resolve(ROOT, SRC, "index.js"),
   },
-  devtool: false,
   output: {
-    path: path.resolve(__dirname, BUILD),
+    path: path.resolve(ROOT, PREVIEW),
     filename: "[name].[contenthash].js",
     clean: true,
   },
   optimization: {
-    minimizer: ["...", new CssMinimizerPlugin()],
     moduleIds: "deterministic",
     runtimeChunk: "single",
     splitChunks: {
@@ -44,6 +39,11 @@ const config = {
         },
       },
     },
+  },
+  devServer: {
+    static: "./PREVIEW",
+    open: { app: { name: "firefox" } },
+    port: 4000,
   },
   plugins: [
     new HtmlWebpackPlugin(pluginConfig.confHtmlWebpackPlugin),

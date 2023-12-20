@@ -9,6 +9,7 @@ import Foo from "./img/foo.jpg";
 export default function ChildComponent() {
   return (
     <>
+      <h1>ХЭШ ТЕСТ</h1>
       <div className="child-component">I'm ChildComponent!</div>
       <img className="child-component-image" src={Plus} alt="svg image" />
       <img className="child-component-image" src={Ico} alt="ico image" />
